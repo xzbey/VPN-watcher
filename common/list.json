@@ -1,0 +1,22 @@
+[
+    {
+        "info": "XRay Country1",
+        "ip": "1.1.1.1",
+        "port": "443"
+    },
+    {
+        "info": "SSH Country1",
+        "ip": "1.1.1.1",
+        "port": "22"
+    },
+    {
+        "info": "XRay Country2",
+        "ip": "2.2.2.2",
+        "port": "443"
+    },
+    {
+        "info": "SSH Country2",
+        "ip": "2.2.2.2",
+        "port": "22"
+    }
+]
