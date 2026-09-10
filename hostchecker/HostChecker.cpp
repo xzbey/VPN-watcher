@@ -10,7 +10,7 @@ void HostChecker::run() {
     QTcpSocket socket;
 
     bool status = false;
-    QTime last_checked = QTime::currentTime();
+    QDateTime last_checked = QDateTime::currentDateTime();
 
     QElapsedTimer timer;
     timer.start();
@@ -20,6 +20,9 @@ void HostChecker::run() {
         status = true;
 
     quint64 latency = timer.elapsed();
+
+    if (!status)
+        latency = NULL;
 
     emit finished(FullInfo(baseInfo, status, latency, last_checked));
 }

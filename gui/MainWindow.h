@@ -3,6 +3,8 @@
 
 #include <QMainWindow>
 #include <QSharedPointer>
+#include <QSqlQuery>
+#include <QSqlDatabase>
 
 #include "HostChecker.h"
 
@@ -30,6 +32,9 @@ public:
 
     void setTable();
 
+    QSqlDatabase createDbConnection(const QString& dbType, const QString& ip, const quint16& port,
+                            const QString& dbName, const QString& userName, const QString& password) const;
+
 public slots:
     void onHostCheckerFinished(const FullInfo& fullInfo);
 
@@ -40,6 +45,9 @@ private:
 
     QVector<QSharedPointer<BaseInfo>> hostList;
     QTimer* timer;
+
+    QSqlQuery insertQuery;
+    bool dbReady = false;
 
 };
 #endif // MAINWINDOW_H

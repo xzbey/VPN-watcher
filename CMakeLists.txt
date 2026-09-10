@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.19)
 project(VPN-watcher LANGUAGES CXX)
 
-find_package(Qt6 6.5 REQUIRED COMPONENTS Core Widgets Network)
+find_package(Qt6 6.5 REQUIRED COMPONENTS Core Widgets Network Sql)
 
 qt_standard_project_setup()
 set(CMAKE_AUTORCC ON)
@@ -21,6 +21,7 @@ target_link_libraries(VPN-watcher
         Qt::Core
         Qt::Widgets
         Qt::Network
+        Qt::Sql
 )
 
 target_include_directories(VPN-watcher
